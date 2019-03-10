@@ -1,0 +1,33 @@
+server: 
+  port: 8001
+spring: 
+   profiles: dev
+   application: 
+    name: userService
+userName: devxiaoming
+      
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: userService-8001   #自定义服务名称信息
+    prefer-ip-address: true     #访问路径可以显示IP地址
+    hostname: 127.0.0.1
+---
+server: 
+  port: 8001
+spring: 
+   profiles: test
+   application: 
+    name: userService
+userName: testxiaoming
+      
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: userService-8001   #自定义服务名称信息
+    prefer-ip-address: true     #访问路径可以显示IP地址
+    hostname: 127.0.0.1
